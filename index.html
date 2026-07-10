@@ -3,41 +3,108 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rally — Rally</title>
-<meta name="description" content="Rally — find your crowd on game day.">
+<title>Rally — Find your crowd on game day</title>
+<meta name="description" content="Rally is the social app for sports fans: game-day chats, tailgates, watch parties, a ticket marketplace, and fans like you. Download Rally on the App Store.">
+<meta property="og:title" content="Rally — Find your crowd on game day">
+<meta property="og:description" content="The social app for sports fans: game chats, tailgates, watch parties, tickets, and fans like you.">
+<meta property="og:image" content="https://rallyfindyourcrowd.com/brand/icon-light.png">
+<meta property="og:url" content="https://rallyfindyourcrowd.com">
+<link rel="icon" type="image/png" href="/brand/icon-light.png">
 <style>
-:root { --navy:#14213D; --red:#E84A50; --ivory:#F7F4EE; --gray:#5a6478; }
+:root { --navy:#14213D; --navy-deep:#0C1526; --red:#E84A50; --ivory:#F7F4EE; --gold:#E9B44C; --gray:#5a6478; --mist:#c8cfdd; }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:var(--navy); background:var(--ivory); line-height:1.65; }
-.wrap { max-width:720px; margin:0 auto; padding:48px 24px 96px; }
-header a.brand { font-weight:800; font-size:22px; color:var(--navy); text-decoration:none; letter-spacing:.5px; }
-header a.brand span { color:var(--red); }
-nav { margin-top:8px; }
-nav a { color:var(--red); text-decoration:none; margin-right:16px; font-size:14px; font-weight:600; }
-h1 { font-size:32px; margin:40px 0 4px; }
-.updated { color:var(--gray); font-size:14px; margin-bottom:24px; }
-.intro { font-size:17px; margin-bottom:32px; }
-h2 { font-size:20px; margin:28px 0 8px; }
-p { margin-bottom:12px; }
 a { color:var(--red); }
-footer { margin-top:64px; padding-top:24px; border-top:1px solid #d9dee5; color:var(--gray); font-size:13px; }
-.hero { text-align:center; padding:60px 0 20px; }
-.hero h1 { font-size:40px; }
-.hero p { font-size:18px; color:var(--gray); max-width:480px; margin:12px auto 0; }
+
+/* ---------- Hero ---------- */
+.hero { background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:var(--ivory); text-align:center; padding:72px 24px 84px; }
+.hero img.logo { width:min(340px, 78vw); height:auto; }
+.hero h1 { font-size:clamp(26px, 5vw, 40px); margin-top:28px; font-weight:800; letter-spacing:.3px; }
+.hero p.tag { font-size:clamp(16px, 2.6vw, 19px); color:var(--mist); max-width:560px; margin:14px auto 0; }
+.cta { display:inline-block; margin-top:36px; background:var(--red); color:#fff; text-decoration:none; font-weight:700; font-size:17px; padding:16px 34px; border-radius:999px; box-shadow:0 6px 24px rgba(232,74,80,.35); }
+.cta:hover { filter:brightness(1.06); }
+.cta-sub { display:block; margin-top:12px; color:var(--mist); font-size:13px; }
+
+/* ---------- Sections ---------- */
+.wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+.section { padding:64px 0 8px; }
+.section h2 { text-align:center; font-size:clamp(22px, 4vw, 30px); }
+.section p.lede { text-align:center; color:var(--gray); max-width:640px; margin:12px auto 0; font-size:16.5px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-top:40px; }
+.card { background:#fff; border:1px solid #e4e1d8; border-radius:16px; padding:26px 24px; }
+.card .em { font-size:28px; }
+.card h3 { font-size:17.5px; margin:12px 0 6px; }
+.card p { color:var(--gray); font-size:14.5px; }
+
+/* ---------- Bottom CTA ---------- */
+.bottom { text-align:center; padding:56px 24px 72px; }
+.bottom h2 { font-size:clamp(20px, 3.6vw, 26px); }
+.cta.navy { background:var(--navy); box-shadow:0 6px 24px rgba(20,33,61,.25); }
+
+/* ---------- Footer ---------- */
+footer { background:var(--navy-deep); color:var(--mist); font-size:13.5px; padding:36px 24px; text-align:center; }
+footer a { color:var(--ivory); text-decoration:none; margin:0 10px; font-weight:600; }
+footer .legal { margin-top:10px; color:#8a93a8; }
 </style>
 </head>
 <body>
+
+<section class="hero">
+  <img class="logo" src="/brand/rally-ivory.png" alt="Rally">
+  <h1>Find your crowd on game day.</h1>
+  <p class="tag">Rally is the social app for sports fans — every game becomes a place to meet up,
+  talk trash, tailgate, and watch together.</p>
+  <a class="cta" href="https://apps.apple.com/app/id6780024837">Download on the App&nbsp;Store</a>
+  <span class="cta-sub">Free · iPhone · Ages 18+</span>
+</section>
+
 <div class="wrap">
-<header>
-  <a class="brand" href="/"><span>R</span> RALLY</a>
-  <nav><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/support">Support</a></nav>
-</header>
-<div class="hero">
-<h1><span style="color:var(--red)">R</span> RALLY</h1>
-<p>Find your crowd on game day. Discover games, join tailgates and watch parties, and chat with fans like you.</p>
-<p style="margin-top:24px">Coming soon to the App Store.</p>
+  <section class="section">
+    <h2>What Rally does</h2>
+    <p class="lede">Pick your teams and Rally builds your game day around them — the games, the people,
+    and the plans, all in one app.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="em">💬</div>
+        <h3>Game-day chats</h3>
+        <p>Every game has a live room. Jump in before kickoff, celebrate (or commiserate) with fans
+        of your team — no invite needed.</p>
+      </div>
+      <div class="card">
+        <div class="em">🔥</div>
+        <h3>Tailgates &amp; watch parties</h3>
+        <p>Host or join real meetups around any game — lot parties before kickoff, bar takeovers for
+        away games, living-room watch parties. Public or invite-only.</p>
+      </div>
+      <div class="card">
+        <div class="em">🤝</div>
+        <h3>Meet fans like you</h3>
+        <p>A swipe deck of fans near you who love the same teams. Say hey — if it&rsquo;s mutual,
+        you&rsquo;re friends with a chat ready to plan game day.</p>
+      </div>
+      <div class="card">
+        <div class="em">🎟️</div>
+        <h3>Ticket marketplace</h3>
+        <p>Buy and sell tickets fan-to-fan. Tickets are held until the buyer confirms delivery, and
+        sellers are paid out securely through Stripe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <h2>Your team plays better with a crowd.</h2>
+    <a class="cta navy" href="https://apps.apple.com/app/id6780024837">Get Rally for iPhone</a>
+  </section>
 </div>
-<footer>© 2026 Rally · Find your crowd on game day · <a href="mailto:support@rallyfindyourcrowd.com">support@rallyfindyourcrowd.com</a></footer>
-</div>
+
+<footer>
+  <div>
+    <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/support/">Support</a>
+  </div>
+  <div style="margin-top:8px">Questions? <a href="mailto:support@rallyfindyourcrowd.com">support@rallyfindyourcrowd.com</a></div>
+  <div class="legal">© 2026 Rally · rallyfindyourcrowd.com · Rally is for fans 18 and older.<br>
+  The Rally app is the product — this site is just the front door.</div>
+</footer>
+
 </body>
 </html>
