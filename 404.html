@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rally</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --navy:#14213D; --red:#E84A50; --ivory:#F7F4EE; --gray:#5a6478; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:var(--navy); background:var(--ivory); line-height:1.65; }
+.wrap { max-width:520px; margin:0 auto; padding:48px 24px 96px; text-align:center; }
+header a.brand { font-weight:800; font-size:22px; color:var(--navy); text-decoration:none; letter-spacing:.5px; }
+header a.brand span { color:var(--red); }
+h1 { font-size:30px; margin:44px 0 8px; }
+p { color:var(--gray); font-size:17px; margin-bottom:16px; }
+.code { display:inline-block; font-size:28px; font-weight:800; letter-spacing:2px; background:#fff; border:2px dashed var(--red); border-radius:14px; padding:14px 28px; margin:16px 0 6px; cursor:pointer; user-select:all; }
+.copied { color:var(--red); font-size:14px; font-weight:600; min-height:20px; }
+.btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:700; font-size:17px; border-radius:999px; padding:15px 34px; margin-top:18px; }
+.btn.ghost { background:transparent; color:var(--red); border:2px solid var(--red); padding:13px 32px; margin-left:8px; }
+.hint { font-size:14px; margin-top:22px; }
+footer { margin-top:72px; padding-top:24px; border-top:1px solid #d9dee5; color:var(--gray); font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="brand" href="/"><span>R</span> RALLY</a></header>
+<div id="invite" style="display:none">
+  <h1><span id="who">A friend</span> invited you to Rally</h1>
+  <p>Find your crowd on game day — games, tailgates, watch parties, and tickets.</p>
+  <div class="code" id="code" title="Tap to copy" onclick="copyCode()">CODE</div>
+  <div class="copied" id="copied"></div>
+  <p class="hint">Enter this code when you sign up (or in Settings → Enter Referral Code) so your friend gets credit.</p>
+  <a class="btn" href="https://apps.apple.com/app/id6780024837">Get Rally on the App Store</a>
+  <a class="btn ghost" id="open" href="#">Open in Rally</a>
+</div>
+<div id="notfound" style="display:none">
+  <h1>Page not found</h1>
+  <p>That page doesn't exist — but game day does.</p>
+  <a class="btn" href="/">Go to rallyfindyourcrowd.com</a>
+</div>
+<footer>© 2026 Rally · Find your crowd on game day</footer>
+</div>
+<script>
+(function () {
+  var m = location.pathname.match(/^\/i\/([A-Za-z0-9_]{3,20})\/?$/);
+  if (m) {
+    var code = m[1].toLowerCase();
+    document.getElementById('who').textContent = code;
+    document.getElementById('code').textContent = code.toUpperCase();
+    document.getElementById('open').setAttribute('href', 'rally:///invite/' + code);
+    document.getElementById('invite').style.display = 'block';
+    document.title = code + ' invited you to Rally';
+  } else {
+    document.getElementById('notfound').style.display = 'block';
+  }
+})();
+function copyCode() {
+  var code = document.getElementById('code').textContent;
+  function done() { document.getElementById('copied').textContent = 'Copied — paste it when you sign up'; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(code).then(done, done);
+  } else { done(); }
+}
+</script>
+</body>
+</html>
